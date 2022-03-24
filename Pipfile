@@ -24,6 +24,7 @@ gunicorn = "*"
 dj-database-url = "*"
 django-silk = "*"
 djangorestframework-filters = "*"
+django-utils-six = "*"
 
 [dev-packages]
 autopep8 = "*"

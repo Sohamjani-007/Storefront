@@ -41,3 +41,419 @@
 2022-03-23 08:38:29,020 (INFO) - django.utils.autoreload - Watching for file changes with StatReloader
 2022-03-23 08:38:29,526 (WARNING) - silk.profiling.profiler - Cannot execute silk_profile as silk is not installed correctly.
 2022-03-23 08:40:03,839 (INFO) - django.utils.autoreload - /mnt/c/Users/hp/Desktop/Django(Code-With-Mosh) Resources/Django 3- Resources/Code/1- Getting Started/Start/storefront3/storefront/settings/dev.py changed, reloading.
+2022-03-24 13:06:44,917 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7ff84f4c0190>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:06:44,946 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7ff84f49e700 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7ff84f46fd30>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:06:46,725 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f7006562c10>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:06:46,728 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7f70064c7790 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7f7006506d60>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:11:07,851 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7ff9b3bb4b50>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:11:07,853 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7ff9b3bde790 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7ff9b3bb42b0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:11:07,862 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7fa58fb98880>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:11:07,864 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7fa58fb6f790 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7fa58fb3c280>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:14:59,076 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f55d97825e0>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:14:59,078 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7f55d975b790 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7f55d9730e50>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:14:59,126 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f5d9c904df0>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:14:59,129 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7f5d9c884790 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7f5d9c8c0a60>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:16:06,725 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7fcbfd69f070>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:16:06,727 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7fcbfd6c8820 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7fcbfd6f1cd0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
+2022-03-24 13:16:06,794 (ERROR) - celery.utils.dispatch.signal - Signal handler <bound method DjangoFixup.on_import_modules of <celery.fixups.django.DjangoFixup object at 0x7f97206dca30>> raised: ImportError("cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 82, in on_import_modules
+    self.worker_fixup.validate_models()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 120, in validate_models
+    self.django_setup()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 116, in django_setup
+    django.setup()
+  File "/usr/local/lib/python3.9/site-packages/django/__init__.py", line 24, in setup
+    apps.populate(settings.INSTALLED_APPS)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 91, in populate
+    app_config = AppConfig.create(entry)
+  File "/usr/local/lib/python3.9/site-packages/django/apps/config.py", line 228, in create
+    import_module(entry)
+  File "/usr/local/lib/python3.9/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/usr/local/lib/python3.9/site-packages/django_filters/__init__.py", line 7, in <module>
+    from .filterset import FilterSet
+  File "/usr/local/lib/python3.9/site-packages/django_filters/filterset.py", line 13, in <module>
+    from .conf import settings
+  File "/usr/local/lib/python3.9/site-packages/django_filters/conf.py", line 6, in <module>
+    from django.utils.translation import ugettext_lazy as _
+ImportError: cannot import name 'ugettext_lazy' from 'django.utils.translation' (/usr/local/lib/python3.9/site-packages/django/utils/translation/__init__.py)
+2022-03-24 13:16:06,797 (ERROR) - celery.utils.dispatch.signal - Signal handler <promise@0x7f972060d820 --> <bound method Celery._autodiscover_tasks of <Celery storefront at 0x7f97206587f0>>> raised: AppRegistryNotReady("Apps aren't loaded yet.")
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/celery/utils/dispatch/signal.py", line 276, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 160, in __call__
+    return self.throw()
+  File "/usr/local/lib/python3.9/site-packages/vine/promises.py", line 157, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 689, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 698, in _autodiscover_tasks_from_fixups
+    return self._autodiscover_tasks_from_names([
+  File "/usr/local/lib/python3.9/site-packages/celery/app/base.py", line 701, in <listcomp>
+    for pkg in fixup.autodiscover_tasks()
+  File "/usr/local/lib/python3.9/site-packages/celery/fixups/django.py", line 92, in autodiscover_tasks
+    return [config.name for config in apps.get_app_configs()]
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 147, in get_app_configs
+    self.check_apps_ready()
+  File "/usr/local/lib/python3.9/site-packages/django/apps/registry.py", line 138, in check_apps_ready
+    raise AppRegistryNotReady("Apps aren't loaded yet.")
+django.core.exceptions.AppRegistryNotReady: Apps aren't loaded yet.
