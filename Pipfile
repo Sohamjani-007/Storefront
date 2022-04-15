@@ -3,11 +3,6 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
-[[source]]
-url = "lter"
-verify_ssl = false
-name = ""
-
 [packages]
 django = "*"
 django-debug-toolbar = "*"
@@ -17,8 +12,27 @@ drf-nested-routers = "*"
 django-filter = "*"
 djoser = "*"
 djangorestframework-simplejwt = "*"
+pillow = "*"
+django-templated-mail = "*"
+redis = "*"
+django-cors-headers = "*"
+celery = "*"
+flower = "*"
+django-redis = "*"
+whitenoise = "*"
+gunicorn = "*"
+dj-database-url = "*"
+django-silk = "*"
+djangorestframework-filters = "*"
+django-utils-six = "*"
 
 [dev-packages]
+autopep8 = "*"
+pytest = "*"
+pytest-django = "*"
+model-bakery = "*"
+locust = "*"
+django-silk = "*"
 
 [requires]
 python_version = "3.9"
